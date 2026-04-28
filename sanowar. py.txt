@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+import os
+import time
+def clear():
+    os.system("clear")
+def logo():
+    print("\033[1;92m")
+    print("===================================")
+    print("   MD SANOWAR CUSTOM TOOL 😎")
+    print("===================================")
+def menu():
+    clear()
+    logo()
+    print("\n[1] Show Date & Time")
+    print("[2] Show System Info")
+    print("[3] Open Facebook")
+    print("[0] Exit")
+    choice = input("\nEnter choice: ")
+    if choice == "1":
+        os.system("date")
+        input("\nPress Enter to back...")
+        menu()
+    elif choice == "2":
+        os.system("uname -a")
+        input("\nPress Enter to back...")
+        menu()
+    elif choice == "3":
+        os.system("xdg-open https://facebook.com")
+        input("\nPress Enter to back...")
+        menu()
+    elif choice == "0":
+        exit()
+    else:
+        print("Wrong choice!")
+        time.sleep(1)
+        menu()
+if __name__ == "__main__":
+    menu()
